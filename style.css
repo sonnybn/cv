@@ -5,6 +5,39 @@ body {
     padding: 20px;
     background-color: #f4f4f4;
 }
+
 header {
     text-align: center;
+    background: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+p, li {
+    color: #555;
+}
+
+section {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: square;
+    padding-left: 20px;
 }
