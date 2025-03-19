@@ -1,17 +1,41 @@
 body {
     font-family: Arial, sans-serif;
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
     background-color: #e0e0e0; /* Gris clair */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Conteneur principal pour structurer les sections */
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Colonne centrale */
+.main-content {
+    width: 60%;
+}
+
+/* Colonne de droite */
+.sidebar {
+    width: 35%;
+}
+
+/* Style des sections */
 header {
     text-align: center;
     background: #333;
     color: white;
     padding: 20px;
     border-radius: 10px;
+    width: 100%;
+    max-width: 1000px;
 }
 
 h1 {
@@ -37,6 +61,12 @@ section {
     margin-bottom: 15px;
 }
 
+/* Ajustement pour la colonne de droite */
+.sidebar section {
+    text-align: right;
+}
+
+/* Ajustement pour la liste */
 ul {
     list-style: square;
     padding-left: 20px;
