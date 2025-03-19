@@ -4,91 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Sonny Brun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Sonny Brun</h1>
-        <p>Étudiant en Réseaux et Télécommunications - Recherche alternance en Administration Réseau</p>
-    </header>
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="profile-pic">
+                <img src="img_cv.jpg" alt="Photo de Sonny Brun">
+            </div>
+            <h1>Sonny Brun</h1>
+            <p class="job-title">Étudiant en Réseaux & Télécommunications</p>
+            
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <ul>
+                    <li><i class="fas fa-phone"></i> 07-82-70-50-81</li>
+                    <li><i class="fas fa-envelope"></i> sonnybrun9@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 42300 Roanne</li>
+                </ul>
+            </div>
 
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>📞 07-82-70-50-81</p>
-        <p>📧 sonnybrun9@gmail.com</p>
-        <p>📍 42300 Roanne</p>
-    </section>
+            <div class="languages">
+                <h2>Langues</h2>
+                <ul>
+                    <li>Anglais - B1</li>
+                    <li>Espagnol - A1+</li>
+                </ul>
+            </div>
 
-    <section class="profil">
-        <h2>Profil</h2>
-        <p>Étudiant en BUT Réseaux & Télécoms, passionné par les technologies réseau et la cybersécurité. 
-           Intéressé par l’administration réseau, la programmation et le web, je m’adapte vite, alliant rigueur, 
-           autonomie et esprit d’équipe pour résoudre des défis techniques.</p>
-    </section>
+            <div class="certifications">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>MOOC ANSSI</li>
+                    <li>PIX</li>
+                </ul>
+            </div>
 
-    <section class="competences">
-        <h2>Compétences</h2>
-        <ul>
-            <li>Programmation</li>
-            <li>Administration Réseau</li>
-            <li>Développement Web</li>
-            <li>Sécurité Électrique</li>
-        </ul>
-    </section>
+            <div class="interests">
+                <h2>Centres d’Intérêts</h2>
+                <ul>
+                    <li>Musique (Pianiste)</li>
+                    <li>Crypto-monnaie</li>
+                    <li>Voyage</li>
+                    <li>Jeux Vidéo</li>
+                </ul>
+            </div>
+        </aside>
 
-    <section class="experience">
-        <h2>Expériences Professionnelles</h2>
-        <p><strong>2021 - IEV RONDY, Aurec-sur-Loire</strong></p>
-        <ul>
-            <li>Stage d’une semaine à IEV RONDY</li>
-            <li>Découverte de la gestion d’une tour de stockage automatisée</li>
-            <li>Utilisation de Linux pour la maintenance et la gestion des stocks</li>
-        </ul>
-    </section>
+        <main class="main-content">
+            <section class="profile">
+                <h2><i class="fas fa-user"></i> Profil</h2>
+                <p>Étudiant en BUT Réseaux & Télécoms, passionné par les technologies réseau et la cybersécurité. Intéressé par l’administration réseau, la programmation et le web, je m’adapte vite, alliant rigueur, autonomie et esprit d’équipe pour résoudre des défis techniques.</p>
+            </section>
 
-    <section class="parcours">
-        <h2>Parcours Scolaire</h2>
-        <p><strong>2024 - BUT Réseaux et Télécoms</strong>, IUT de Roanne</p>
-        <p><strong>2022-2024 - STI2D</strong>, Lycée Notre Dame du Château, Monistrol-sur-Loire</p>
-        <p><strong>2021 - Brevet des Collèges</strong>, Jean-Monnet, Yssingeaux</p>
-    </section>
+            <section class="skills">
+                <h2><i class="fas fa-tools"></i> Compétences</h2>
+                <ul>
+                    <li>Programmation</li>
+                    <li>Administration Réseau</li>
+                    <li>Développement Web</li>
+                    <li>Sécurité Électrique</li>
+                </ul>
+            </section>
 
-    <section class="langues">
-        <h2>Langues</h2>
-        <ul>
-            <li>Anglais (B1)</li>
-            <li>Espagnol (A1+)</li>
-        </ul>
-    </section>
+            <section class="experience">
+                <h2><i class="fas fa-briefcase"></i> Expériences Professionnelles</h2>
+                <div class="experience-item">
+                    <h3>IEV RONDY, Aurec-sur-Loire <span>2021</span></h3>
+                    <ul>
+                        <li>Stage d’une semaine</li>
+                        <li>Découverte de la gestion d’une tour de stockage automatisée</li>
+                        <li>Utilisation de Linux pour la maintenance et la gestion des stocks</li>
+                    </ul>
+                </div>
+            </section>
 
-    <section class="certifications">
-        <h2>Certifications</h2>
-        <ul>
-            <li>MOOC ANSSI</li>
-            <li>PIX</li>
-        </ul>
-    </section>
+            <section class="education">
+                <h2><i class="fas fa-graduation-cap"></i> Parcours Scolaire</h2>
+                <ul>
+                    <li><strong>2024 :</strong> BUT Réseaux et Télécoms - IUT de Roanne</li>
+                    <li><strong>2022 - 2024 :</strong> STI2D - Lycée Notre Dame du Château, Monistrol-sur-Loire</li>
+                    <li><strong>2021 :</strong> Brevet des Collèges - Jean-Monnet, Yssingeaux</li>
+                </ul>
+            </section>
 
-    <section class="personnel">
-        <h2>Compétences Personnelles</h2>
-        <ul>
-            <li>Autonomie</li>
-            <li>Adaptabilité</li>
-            <li>Esprit d'équipe</li>
-            <li>Curiosité</li>
-        </ul>
-    </section>
-
-    <section class="interets">
-        <h2>Centres d’Intérêts</h2>
-        <ul>
-            <li>Musique (Pianiste)</li>
-            <li>Crypto-monnaie</li>
-            <li>Voyage</li>
-            <li>Jeux Vidéo</li>
-        </ul>
-    </section>
-
-    <script src="script.js"></script>
+            <section class="personal-skills">
+                <h2><i class="fas fa-user-check"></i> Compétences Personnelles</h2>
+                <ul>
+                    <li>Autonomie</li>
+                    <li>Adaptabilité</li>
+                    <li>Esprit d'équipe</li>
+                    <li>Curiosité</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
