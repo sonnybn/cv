@@ -3,7 +3,7 @@ body {
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #e0e0e0; /* Gris clair */
 }
 
 header {
