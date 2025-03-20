@@ -4,102 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Sonny Brun</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="cv-container">
-        <aside class="sidebar">
-            <div class="profile-pic">
-                <img src="img_cv.jpg" alt="Photo de Sonny Brun">
-            </div>
-            <h1>Sonny Brun</h1>
-            <p class="job-title">Étudiant en Réseaux & Télécommunications</p>
+    <div class="container">
+        <!-- Section de gauche avec le CV -->
+        <div class="cv-container">
+            <img src="CV_Sonny_BRUN.png" alt="CV Sonny Brun">
+        </div>
+
+        <!-- Section de droite avec les boutons -->
+        <div class="right-section">
+            <h2>Contact</h2>
+            <a href="https://www.linkedin.com/in/sonny-brun1" target="_blank" class="btn">LinkedIn</a>
+            <a href="https://github.com/sonnybn" target="_blank" class="btn">GitHub</a>
             
-            <div class="contact-info">
-                <h2>Contact</h2>
-                <ul>
-                    <li><i class="fas fa-phone"></i> 07-82-70-50-81</li>
-                    <li><i class="fas fa-envelope"></i> sonnybrun9@gmail.com</li>
-                    <li><i class="fas fa-map-marker-alt"></i> 42300 Roanne</li>
-                </ul>
-            </div>
-
-            <div class="languages">
-                <h2>Langues</h2>
-                <ul>
-                    <li>Anglais - B1</li>
-                    <li>Espagnol - A1+</li>
-                </ul>
-            </div>
-
-            <div class="certifications">
-                <h2>Certifications</h2>
-                <ul>
-                    <li>MOOC ANSSI</li>
-                    <li>PIX</li>
-                </ul>
-            </div>
-
-            <div class="interests">
-                <h2>Centres d’Intérêts</h2>
-                <ul>
-                    <li>Musique (Pianiste)</li>
-                    <li>Crypto-monnaie</li>
-                    <li>Voyage</li>
-                    <li>Jeux Vidéo</li>
-                </ul>
-            </div>
-        </aside>
-
-        <main class="main-content">
-            <section class="profile">
-                <h2><i class="fas fa-user"></i> Profil</h2>
-                <p>Étudiant en BUT Réseaux & Télécoms, passionné par les technologies réseau et la cybersécurité. Intéressé par l’administration réseau, la programmation et le web, je m’adapte vite, alliant rigueur, autonomie et esprit d’équipe pour résoudre des défis techniques.</p>
-            </section>
-
-            <section class="skills">
-                <h2><i class="fas fa-tools"></i> Compétences</h2>
-                <ul>
-                    <li>Programmation</li>
-                    <li>Administration Réseau</li>
-                    <li>Développement Web</li>
-                    <li>Sécurité Électrique</li>
-                </ul>
-            </section>
-
-            <section class="experience">
-                <h2><i class="fas fa-briefcase"></i> Expériences Professionnelles</h2>
-                <div class="experience-item">
-                    <h3>IEV RONDY, Aurec-sur-Loire <span>2021</span></h3>
-                    <ul>
-                        <li>Stage d’une semaine</li>
-                        <li>Découverte de la gestion d’une tour de stockage automatisée</li>
-                        <li>Utilisation de Linux pour la maintenance et la gestion des stocks</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="education">
-                <h2><i class="fas fa-graduation-cap"></i> Parcours Scolaire</h2>
-                <ul>
-                    <li><strong>2024 :</strong> BUT Réseaux et Télécoms - IUT de Roanne</li>
-                    <li><strong>2022 - 2024 :</strong> STI2D - Lycée Notre Dame du Château, Monistrol-sur-Loire</li>
-                    <li><strong>2021 :</strong> Brevet des Collèges - Jean-Monnet, Yssingeaux</li>
-                </ul>
-            </section>
-
-            <section class="personal-skills">
-                <h2><i class="fas fa-user-check"></i> Compétences Personnelles</h2>
-                <ul>
-                    <li>Autonomie</li>
-                    <li>Adaptabilité</li>
-                    <li>Esprit d'équipe</li>
-                    <li>Curiosité</li>
-                </ul>
-            </section>
-        </main>
+            <h3>Télécharger le CV</h3>
+            <form id="download-form" action="https://formspree.io/f/xnnpjyav" method="POST" target="_self">
+                <label>
+                    Votre email :
+                    <input type="email" name="email" required>
+                </label>
+                
+                <!-- Champ caché pour personnaliser l'objet du mail -->
+                <input type="hidden" name="_subject" value="Nouveau téléchargement de CV !">
+                
+                <button type="submit">Télécharger</button>
+            </form>            
+            
+            
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
