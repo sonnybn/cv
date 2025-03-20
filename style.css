@@ -11,12 +11,12 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(135deg, #1e3c72, #2a5298);
-    padding: 20px; /* Pour éviter que le contenu touche les bords sur mobile */
+    padding: 20px; /* Évite que le contenu touche les bords */
 }
 
 .container {
     display: flex;
-    flex-wrap: wrap; /* Permet au contenu de passer en colonne sur petit écran */
+    flex-wrap: wrap; /* Permet aux éléments de passer en colonne si besoin */
     justify-content: space-between;
     align-items: center;
     width: 58%;
@@ -33,11 +33,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 55%; /* Ajustement pour éviter que ça prenne trop de place */
+    width: 55%;
+    min-width: 300px; /* Empêche Firefox de réduire la largeur */
     padding: 5px;
     border: 1px solid white;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0; /* Empêche la réduction automatique sur Firefox */
 }
 
 .cv-container img {
@@ -50,12 +52,13 @@ body {
 /* Section des boutons */
 .right-section {
     width: 40%;
+    min-width: 250px; /* Empêche la réduction des boutons */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-left: -30px; /* Ajustement pour un bon positionnement */
-    padding-right: 5px;
+    margin-left: 10px; /* Réduction du décalage pour éviter le chevauchement */
+    flex-shrink: 0;
 }
 
 .right-section h2, .right-section h3 {
@@ -67,7 +70,7 @@ body {
 .btn {
     display: block;
     text-align: center;
-    width: 90%; /* Ajustement pour ne pas être trop large sur mobile */
+    width: 90%;
     padding: 12px;
     margin: 8px 0;
     border: none;
@@ -101,7 +104,7 @@ form {
 }
 
 input {
-    width: 90%; /* Évite que le champ soit trop large sur mobile */
+    width: 90%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -134,24 +137,24 @@ button:active {
 /* ✅ RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
     .container {
-        width: 90%; /* Plus de place pour le contenu sur mobile */
+        width: 90%;
         flex-direction: column;
         align-items: center;
         padding: 10px;
     }
 
     .cv-container {
-        width: 90%; /* Le CV prend plus de place sur mobile */
+        width: 90%;
         margin-bottom: 20px;
     }
 
     .right-section {
-        width: 100%; /* Pour bien centrer les boutons */
+        width: 100%;
         margin-left: 0;
         padding: 0;
     }
 
     .btn, button {
-        width: 100%; /* Prend toute la largeur sur mobile */
+        width: 100%;
     }
 }
