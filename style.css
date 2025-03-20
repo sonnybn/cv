@@ -5,8 +5,8 @@
     font-family: Arial, sans-serif;
 }
 
-/* Animation fluide du background */
-@keyframes animateBackground {
+/* Animation fluide du rectangle contenant le CV et les boutons */
+@keyframes animateContainer {
     0% { background-position: 0% 50%; }
     25% { background-position: 50% 100%; }
     50% { background-position: 100% 50%; }
@@ -14,27 +14,27 @@
     100% { background-position: 0% 50%; }
 }
 
+/* Arrière-plan principal en bleu fixe */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(270deg, #001F3F, #0074D9, #00A1FF, #39CCCC, #B3E5FC, #8E44AD, #2980B9, #3498DB);
-    background-size: 500% 500%;
-    animation: animateBackground 20s linear infinite;
+    background: #001F3F; /* Bleu fixe */
     padding: 20px;
 }
 
-
-
+/* Rectangle contenant le CV et les boutons avec animation fluide */
 .container {
     display: flex;
-    flex-wrap: wrap; /* Permet aux éléments de passer en colonne si besoin */
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 58%;
     max-width: 850px;
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(270deg, #0000ff, #0044ff, #0074D9, #00A1FF, #39CCCC, #1E90FF, #2980B9, #8A2BE2, #6A5ACD, #483D8B);
+    background-size: 600% 600%;
+    animation: animateContainer 15s linear infinite;
     padding: 15px;
     border-radius: 10px;
     backdrop-filter: blur(10px);
@@ -47,12 +47,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 55%;
-    min-width: 300px; /* Empêche Firefox de réduire la largeur */
+    min-width: 300px;
     padding: 5px;
     border: 1px solid white;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.1);
-    flex-shrink: 0; /* Empêche la réduction automatique sur Firefox */
+    flex-shrink: 0;
 }
 
 .cv-container img {
@@ -65,12 +65,12 @@ body {
 /* Section des boutons */
 .right-section {
     width: 40%;
-    min-width: 250px; /* Empêche la réduction des boutons */
+    min-width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-left: 10px; /* Réduction du décalage pour éviter le chevauchement */
+    margin-left: 10px;
     flex-shrink: 0;
 }
 
@@ -126,25 +126,27 @@ input {
 
 button {
     width: 90%;
-    padding: 10px;
-    background: linear-gradient(135deg, #36d1dc, #5b86e5);
+    padding: 12px;
+    background: linear-gradient(135deg, #ff8c00, #ffaf40); /* Dégradé orange doré */
     color: white;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.3s;
+    font-size: 16px;
+    transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
 }
 
 /* Effet hover et animation du bouton */
 button:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(54, 209, 220, 0.5);
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.5);
+    background: linear-gradient(135deg, #ffaf40, #ff8c00); /* Inverse le dégradé pour un effet dynamique */
 }
 
 button:active {
     transform: scale(0.95);
-    box-shadow: 0 2px 5px rgba(54, 209, 220, 0.5);
+    box-shadow: 0 2px 5px rgba(255, 140, 0, 0.5);
 }
 
 /* ✅ RESPONSIVE DESIGN */
