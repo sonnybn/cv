@@ -153,32 +153,32 @@ button:active {
 }
 
 /* ✅ RESPONSIVE DESIGN */
-@media screen and (max-width: 1024px) {
-    .container {
-        width: 75%; /* 🔹 Ajustement pour écran moyen */
-    }
-}
-
 @media screen and (max-width: 768px) {
     .container {
-        width: 90%;
+        width: 95%; /* 🔹 Ajustement pour prendre plus de place sur mobile */
         flex-direction: column;
         align-items: center;
-        padding: 15px;
+        padding: 18px;
     }
 
     .cv-container {
-        width: 100%;
+        width: 90%; /* 🔹 Permet d’éviter que le CV soit trop petit */
         margin-bottom: 20px;
     }
 
+    .cv-container img {
+        max-height: 70vh; /* 🔹 Ajuste la hauteur pour qu’il ne dépasse pas */
+    }
+
     .right-section {
-        width: 100%;
+        width: 90%; /* 🔹 Pour bien centrer les boutons */
         margin-left: 0;
         padding: 0;
+        text-align: center;
     }
 
     .btn, button {
-        width: 100%;
+        width: 100%; /* 🔹 Les boutons prennent toute la largeur pour un bon alignement */
     }
 }
+
