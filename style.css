@@ -24,21 +24,21 @@ body {
     padding: 20px;
 }
 
-/* Rectangle contenant le CV et les boutons avec animation fluide */
+/* Rectangle contenant le CV et les boutons */
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 58%;
-    max-width: 850px;
+    width: 62%; /* 🔹 Augmenté légèrement */
+    max-width: 950px; /* 🔹 Taille ajustée */
     background: linear-gradient(270deg, #0000ff, #0044ff, #0074D9, #00A1FF, #39CCCC, #1E90FF, #2980B9, #8A2BE2, #6A5ACD, #483D8B);
     background-size: 600% 600%;
     animation: animateContainer 15s linear infinite;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 18px; /* 🔹 Plus d'espace interne */
+    border-radius: 12px;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* CV */
@@ -46,65 +46,67 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 55%;
-    min-width: 300px;
-    padding: 5px;
-    border: 1px solid white;
+    width: 54%; /* 🔹 Légèrement agrandi */
+    min-width: 320px;
+    padding: 8px; /* 🔹 Plus d'espace autour */
+    border: 2px solid white;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     flex-shrink: 0;
 }
 
 .cv-container img {
     width: 100%;
-    max-height: 80vh;
+    max-height: 80vh; /* 🔹 Ajusté pour éviter les débordements */
     object-fit: contain;
     border-radius: 6px;
 }
 
 /* Section des boutons */
 .right-section {
-    width: 40%;
-    min-width: 250px;
+    width: 42%; /* 🔹 Ajusté pour bien s’aligner */
+    min-width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-left: 10px;
+    margin-left: 5px; /* 🔹 Ajustement fin */
     flex-shrink: 0;
 }
 
 .right-section h2, .right-section h3 {
     color: white;
+    font-size: 20px; /* 🔹 Texte légèrement plus grand */
     margin-bottom: 15px;
 }
 
-/* Boutons stylisés */
+/* Boutons */
 .btn {
     display: block;
     text-align: center;
-    width: 90%;
+    width: 92%; /* 🔹 Un peu plus large */
     padding: 12px;
     margin: 8px 0;
+    font-size: 16px;
     border: none;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
     transition: transform 0.2s, box-shadow 0.3s;
 }
 
 /* Effet hover interactif */
 .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(255, 126, 95, 0.5);
+    transform: scale(1.06);
+    box-shadow: 0 4px 12px rgba(255, 126, 95, 0.5);
     background: linear-gradient(135deg, #feb47b, #ff7e5f);
 }
 
 /* Animation au clic */
 .btn:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
     box-shadow: 0 2px 5px rgba(255, 126, 95, 0.5);
 }
 
@@ -117,49 +119,56 @@ form {
 }
 
 input {
-    width: 90%;
+    width: 92%;
     padding: 10px;
+    font-size: 15px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 button {
-    width: 90%;
+    width: 92%;
     padding: 12px;
-    background: linear-gradient(135deg, #ff8c00, #ffaf40); /* Dégradé orange doré */
+    font-size: 16px;
+    background: linear-gradient(135deg, #ff8c00, #ffaf40);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
     transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
 }
 
 /* Effet hover et animation du bouton */
 button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.5);
-    background: linear-gradient(135deg, #ffaf40, #ff8c00); /* Inverse le dégradé pour un effet dynamique */
+    transform: scale(1.06);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.5);
+    background: linear-gradient(135deg, #ffaf40, #ff8c00);
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: scale(0.96);
     box-shadow: 0 2px 5px rgba(255, 140, 0, 0.5);
 }
 
 /* ✅ RESPONSIVE DESIGN */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 75%; /* 🔹 Ajustement pour écran moyen */
+    }
+}
+
 @media screen and (max-width: 768px) {
     .container {
         width: 90%;
         flex-direction: column;
         align-items: center;
-        padding: 10px;
+        padding: 15px;
     }
 
     .cv-container {
-        width: 90%;
+        width: 100%;
         margin-bottom: 20px;
     }
 
