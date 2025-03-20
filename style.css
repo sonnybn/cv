@@ -5,14 +5,27 @@
     font-family: Arial, sans-serif;
 }
 
+/* Animation fluide du background */
+@keyframes animateBackground {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 100%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 0%; }
+    100% { background-position: 0% 50%; }
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    padding: 20px; /* Évite que le contenu touche les bords */
+    background: linear-gradient(270deg, #001F3F, #0074D9, #00A1FF, #39CCCC, #B3E5FC, #8E44AD, #2980B9, #3498DB);
+    background-size: 500% 500%;
+    animation: animateBackground 20s linear infinite;
+    padding: 20px;
 }
+
+
 
 .container {
     display: flex;

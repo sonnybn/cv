@@ -19,10 +19,11 @@ document.getElementById("download-form").addEventListener("submit", function(eve
             link.click();
             document.body.removeChild(link);
 
-            alert("Merci ! Votre CV a été téléchargé.");
+            alert("Merci ! le CV a été téléchargé.");
         } else {
             alert("Une erreur s'est produite. Veuillez réessayer.");
         }
     })
     .catch(error => alert("Erreur lors de l'envoi du formulaire."));
 });
+
