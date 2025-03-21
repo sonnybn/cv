@@ -17,6 +17,7 @@
 /* Arrière-plan principal en bleu fixe */
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -30,12 +31,12 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 62%; /* 🔹 Augmenté légèrement */
-    max-width: 950px; /* 🔹 Taille ajustée */
+    width: 62%;
+    max-width: 950px;
     background: linear-gradient(270deg, #0000ff, #0044ff, #0074D9, #00A1FF, #39CCCC, #1E90FF, #2980B9, #8A2BE2, #6A5ACD, #483D8B);
     background-size: 600% 600%;
     animation: animateContainer 15s linear infinite;
-    padding: 18px; /* 🔹 Plus d'espace interne */
+    padding: 18px;
     border-radius: 12px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -46,9 +47,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 54%; /* 🔹 Légèrement agrandi */
+    width: 54%;
     min-width: 320px;
-    padding: 8px; /* 🔹 Plus d'espace autour */
+    padding: 8px;
     border: 2px solid white;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.15);
@@ -57,26 +58,26 @@ body {
 
 .cv-container img {
     width: 100%;
-    max-height: 80vh; /* 🔹 Ajusté pour éviter les débordements */
+    max-height: 80vh;
     object-fit: contain;
     border-radius: 6px;
 }
 
 /* Section des boutons */
 .right-section {
-    width: 42%; /* 🔹 Ajusté pour bien s’aligner */
+    width: 42%;
     min-width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-left: 5px; /* 🔹 Ajustement fin */
+    margin-left: 5px;
     flex-shrink: 0;
 }
 
 .right-section h2, .right-section h3 {
     color: white;
-    font-size: 20px; /* 🔹 Texte légèrement plus grand */
+    font-size: 20px;
     margin-bottom: 15px;
 }
 
@@ -84,7 +85,7 @@ body {
 .btn {
     display: block;
     text-align: center;
-    width: 92%; /* 🔹 Un peu plus large */
+    width: 92%;
     padding: 12px;
     margin: 8px 0;
     font-size: 16px;
@@ -155,30 +156,43 @@ button:active {
 /* ✅ RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
     .container {
-        width: 95%; /* 🔹 Ajustement pour prendre plus de place sur mobile */
+        width: 95%;
         flex-direction: column;
         align-items: center;
         padding: 18px;
     }
 
     .cv-container {
-        width: 90%; /* 🔹 Permet d’éviter que le CV soit trop petit */
+        width: 90%;
         margin-bottom: 20px;
     }
 
     .cv-container img {
-        max-height: 70vh; /* 🔹 Ajuste la hauteur pour qu’il ne dépasse pas */
+        max-height: 70vh;
     }
 
     .right-section {
-        width: 90%; /* 🔹 Pour bien centrer les boutons */
+        width: 90%;
         margin-left: 0;
         padding: 0;
         text-align: center;
     }
 
     .btn, button {
-        width: 100%; /* 🔹 Les boutons prennent toute la largeur pour un bon alignement */
+        width: 100%;
     }
 }
 
+/* FOOTER */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 14px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 20px;
+}
