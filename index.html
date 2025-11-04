@@ -4,37 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Sonny Brun</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="background-animation">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+    </div>
+
     <div class="container">
-        <!-- Section de gauche avec le CV -->
         <div class="cv-container">
-            <img src="cv_sonny_brun.png" alt="CV Sonny Brun">
+            <img src="cv_sonny_brun.png" alt="Aperçu du CV de Sonny Brun">
         </div>
 
-        <!-- Section de droite avec les boutons -->
         <div class="right-section">
             <h2>Liens</h2>
-            <a href="https://www.linkedin.com/in/sonny-brun" target="_blank" class="btn">LinkedIn</a>
-            <a href="https://github.com/sonnybn" target="_blank" class="btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/sonny-brun" target="_blank" rel="noopener noreferrer" class="btn">LinkedIn</a>
+            <a href="https://github.com/sonnybn" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
             
             <h3>Télécharger le CV</h3>
-            <form id="download-form" action="https://formspree.io/f/xnnpjyav" method="POST" target="_self">
-                <label>
-                    Votre email :
-                    <input type="email" name="email" required>
-                </label>
+            <form id="download-form" action="https://formspree.io/f/xnnpjyav" method="POST">
+                <label for="email">Votre email :</label>
+                <input type="email" id="email" name="email" required>
                 
-                <!-- Champ caché pour personnaliser l'objet du mail -->
                 <input type="hidden" name="_subject" value="Nouveau téléchargement de CV !">
                 
-                <button type="submit">Télécharger</button>
+                <button type="submit" id="submit-button">Télécharger</button>
+                
+                <p id="form-message"></p>
             </form>            
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>© 2024 Sonny Brun - Tous droits réservés.</p>
     </footer>
