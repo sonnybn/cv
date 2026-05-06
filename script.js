@@ -149,49 +149,75 @@
    FORMULAIRE
    ============================================================ */
 
-document.getElementById('download-form').addEventListener('submit', function (e) {
-    e.preventDefault();
+(function () {
+    const form        = document.getElementById('download-form');
+    const emailInput  = document.getElementById('email');
+    const submitBtn   = document.getElementById('submit-button');
+    const messageEl   = document.getElementById('form-message');
 
-    const form         = this;
-    const submitButton = document.getElementById('submit-button');
-    const messageEl    = document.getElementById('form-message');
+    const DOWNLOAD_ICON = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+    </svg> Télécharger`;
 
-    submitButton.disabled    = true;
-    submitButton.textContent = 'Envoi en cours…';
-    messageEl.textContent    = '';
-    messageEl.className      = '';
+    /* Bouton désactivé par défaut — actif uniquement si email valide */
+    submitBtn.disabled = true;
 
-    fetch('https://formspree.io/f/xnnpjyav', {
-        method:  'POST',
-        body:    new FormData(form),
-        headers: { Accept: 'application/json' },
-    })
-    .then(res => {
-        if (!res.ok) throw new Error();
-        messageEl.textContent = 'Merci ! Le CV va être téléchargé.';
-        messageEl.className   = 'success';
-        form.reset();
-        const a = document.createElement('a');
-        a.href = 'cv_sonny_brun.pdf';
-        a.download = 'cv_sonny_brun.pdf';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-    })
-    .catch(() => {
-        messageEl.textContent = "Une erreur s'est produite. Veuillez réessayer.";
-        messageEl.className   = 'error';
-    })
-    .finally(() => {
-        setTimeout(() => {
-            submitButton.disabled = false;
-            submitButton.innerHTML = `
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2.2"
-                     stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-                </svg>
-                Télécharger`;
-        }, 3000);
+    emailInput.addEventListener('input', () => {
+        submitBtn.disabled = !emailInput.validity.valid;
     });
-});
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        submitBtn.disabled    = true;
+        submitBtn.textContent = 'Envoi en cours…';
+        messageEl.textContent = '';
+        messageEl.className   = '';
+
+        fetch('https://formspree.io/f/xnnpjyav', {
+            method:  'POST',
+            body:    new FormData(form),
+            headers: { Accept: 'application/json' },
+        })
+        .then(res => {
+            if (!res.ok) throw new Error();
+            messageEl.textContent = 'Merci ! Téléchargement en cours…';
+            messageEl.className   = 'success';
+            form.reset();
+            submitBtn.disabled = true; // reste désactivé après reset
+
+            /*
+             * Téléchargement via blob pour forcer le fichier local
+             * plutôt qu'une ouverture dans un nouvel onglet.
+             * GitHub Pages ne renvoie pas Content-Disposition: attachment,
+             * donc le simple attribut `download` ne suffit pas.
+             */
+            fetch('cv_sonny_brun.pdf')
+                .then(r => r.blob())
+                .then(blob => {
+                    const url = URL.createObjectURL(blob);
+                    const a   = document.createElement('a');
+                    a.href     = url;
+                    a.download = 'CV_Sonny_Brun.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    setTimeout(() => URL.revokeObjectURL(url), 5000);
+                });
+        })
+        .catch(() => {
+            messageEl.textContent = "Une erreur s'est produite. Veuillez réessayer.";
+            messageEl.className   = 'error';
+            submitBtn.disabled = !emailInput.validity.valid;
+        })
+        .finally(() => {
+            setTimeout(() => {
+                submitBtn.innerHTML = DOWNLOAD_ICON;
+                // Réactiver seulement si l'email est encore valide
+                submitBtn.disabled = !emailInput.validity.valid;
+            }, 3000);
+        });
+    });
+})();

@@ -396,8 +396,14 @@ button[type="submit"]::before {
     }
 }
 
-button[type="submit"]:active  { transform: scale(0.97); opacity: 0.9; }
-button[type="submit"]:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+button[type="submit"]:active   { transform: scale(0.97); opacity: 0.9; }
+button[type="submit"]:disabled {
+    opacity: 0.38;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    filter: grayscale(0.4);
+}
 
 /* ─── Messages ──────────────────────────────────────── */
 
